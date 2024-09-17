@@ -1,4 +1,4 @@
-module github.com/Xemp02/auth-service.git
+module github.com/Xemp02/auth-service
 
 go 1.20
 
