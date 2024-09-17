@@ -1,11 +1,19 @@
 package main
 
 import (
-	"fmt"
+	"net/http"
 
-	"github.com/fatih/color"
+	"github.com/labstack/echo"
 )
 
 func main() {
-	fmt.Println(color.GreenString("Hello, добрый путник"))
+	e := echo.New()
+
+	e.GET("/", get)
+
+	e.Logger.Fatal(e.Start(":1323"))
+}
+
+func get(c echo.Context) error {
+	return c.String(http.StatusOK, "Hello, добрый путник")
 }
